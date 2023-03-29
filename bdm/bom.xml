@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0" productVersion="7.15.0">
+    <businessObjects>
+        <businessObject qualifiedName="com.skymed.totem.model.Barrio">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="ciudadId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Ciudad" fetchType="LAZY" name="ciudad" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="className" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.CheckinGroup">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="pendienteOperacion" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="pendienteAdmision" nullable="true" collection="false"/>
+                <field type="OFFSETDATETIME" length="255" name="fechaEnListadoOperacion" nullable="true" collection="false"/>
+                <field type="OFFSETDATETIME" length="255" name="fechaEnListadoAdmision" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="usuarioAsignado" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="usuarioAsignadoUsername" nullable="true" collection="false"/>
+                <field type="OFFSETDATETIME" length="255" name="usuarioAsignadoFecha" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="vencido" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="origen" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="flujoRevertido" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="multiturno" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="numeroDocumento" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.ParametroOpcion" fetchType="LAZY" name="tipoDocumento" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.Ciudad">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="dominioInternet" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="prefijoTelefono" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="departamentoId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Departamento" fetchType="LAZY" name="departamento" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.ColaAdmision">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="activo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nomenclatura" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="habilitado" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="numeroJerarquia" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="imagenBase64" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="mensajePopup" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.ColaAdmisionHorario" fetchType="LAZY" name="colaHorario" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.ColaAdmisionHorario">
+            <fields>
+                <field type="BOOLEAN" length="255" name="habilitado" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="fullDay" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="horaDesde" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="horaHasta" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.Departamento">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="paisId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Pais" fetchType="LAZY" name="pais" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="className" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.Direccion">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="predeterminada" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="latlng" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="paisEnLetras" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="ciudadEnLetras" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="ciudadId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Ciudad" fetchType="LAZY" name="ciudad" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="paisId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Pais" fetchType="LAZY" name="pais" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="className" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.Empresa">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="activo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="codigo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="descripcion" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="email" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="fechaIngreso" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="ruc" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="telefono" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="url" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="barrioId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Barrio" fetchType="LAZY" name="barrio" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="direccionId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Direccion" fetchType="LAZY" name="direccion" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="className" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.Hospital">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="activo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="email" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="codigo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="url" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="dominio" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="celiterIdCliente" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="celiterIdCancelacion" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="direccionId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Direccion" fetchType="LAZY" name="direccion" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="barrioId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Barrio" fetchType="LAZY" name="barrio" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="aseguradoraId" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="empresaId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Empresa" fetchType="LAZY" name="empresa" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="className" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.Pais">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="codigoIso2" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="codigoIso3" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="dominioInternet" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="moneda" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="prefijoTelefono" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="languageTag" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="className" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.ParametroOpcion">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="dominio" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="codigo" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="descripcion" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="valor" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="mensajeAsociado" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="grupo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="codigoExterno" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="className" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.Prioridad">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="minutos" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="peso" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nomenclatura" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="codigo" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="numeroJerarquia" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="traduccion" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="imagenBase64" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.Sede">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="emailContacto" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="codigoExterno" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="hospitalId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Hospital" fetchType="LAZY" name="hospital" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="direccionId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Direccion" fetchType="LAZY" name="direccion" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="barrioId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Barrio" fetchType="LAZY" name="barrio" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="ciudadId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Ciudad" fetchType="LAZY" name="ciudad" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="paisId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Pais" fetchType="LAZY" name="pais" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="className" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.Totem">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="nomenclatura" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="direccionMac" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="direccionIp" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="descripcion" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="sedeId" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Sede" fetchType="LAZY" name="sede" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="className" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>
