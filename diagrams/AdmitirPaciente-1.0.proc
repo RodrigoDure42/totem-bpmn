@@ -27,10 +27,10 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_Wc3A8c87Ee2qPf4DYzs77w" name="currentCheckin" content="currentCheckin" type="TYPE_VARIABLE" returnType="com.skymed.totem.model.AdmisionPacienteDTO">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Xms94M87Ee2qPf4DYzs77w" documentation="&#x9;" name="currentCheckin" dataType="_eA_0BsziEe22052-PBnc4Q" className="com.skymed.totem.model.AdmisionPacienteDTO"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_Wc3A8s87Ee2qPf4DYzs77w" name="loadCheckin()" content="import java.util.logging.Logger&#xD;&#xA;&#xD;&#xA;import com.fasterxml.jackson.databind.ObjectMapper&#xD;&#xA;import com.skymed.totem.model.AdmisionPacienteDTO;&#xD;&#xA;import com.skymed.totem.model.CheckinGroup&#xD;&#xA;import com.skymed.totem.model.EpisodioResponse&#xD;&#xA;import com.skymed.totem.model.Oreturn&#xD;&#xA;&#xD;&#xA;def checkin = new AdmisionPacienteDTO();&#xD;&#xA;checkin.setCola(selectedCola.getId());&#xD;&#xA;checkin.setTotemId(currentTotem.getId());&#xD;&#xA;checkin.setPrioridadId(selectedPrioridad.getId());&#xD;&#xA;checkin.setIdTipoDocumento(102);&#xD;&#xA;checkin.setNroDocumento(&quot;123456&quot;);&#xD;&#xA;checkin.setNombrePaciente(&quot;Walter Bates&quot;);&#xD;&#xA;&#xD;&#xA;def episodioResponse = new EpisodioResponse();&#xD;&#xA;def oReturn = new Oreturn();&#xD;&#xA;oReturn.setType(&quot;S&quot;)&#xD;&#xA;episodioResponse.setOreturn(oReturn);&#xD;&#xA;checkin.setResponse(episodioResponse);&#xD;&#xA;&#xD;&#xA;return checkin;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.skymed.totem.model.AdmisionPacienteDTO">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_olPlYNIqEe2kyJbixfU_cQ" name="selectedPrioridad" dataType="_eA_0BsziEe22052-PBnc4Q" className="com.skymed.totem.model.Prioridad"/>
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_olPlYdIqEe2kyJbixfU_cQ" name="currentTotem" dataType="_eA_0BsziEe22052-PBnc4Q" className="com.skymed.totem.model.Totem"/>
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_olPlYtIqEe2kyJbixfU_cQ" name="selectedCola" dataType="_eA_0BsziEe22052-PBnc4Q" className="com.skymed.totem.model.ColaAdmision"/>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_Wc3A8s87Ee2qPf4DYzs77w" name="loadCheckin()" content="import java.util.logging.Logger&#xD;&#xA;&#xD;&#xA;import com.fasterxml.jackson.databind.ObjectMapper&#xD;&#xA;import com.skymed.totem.model.AdmisionPacienteDTO;&#xD;&#xA;import com.skymed.totem.model.CheckinGroup&#xD;&#xA;import com.skymed.totem.model.EpisodioResponse&#xD;&#xA;import com.skymed.totem.model.Oreturn&#xD;&#xA;&#xD;&#xA;def checkin = new AdmisionPacienteDTO();&#xD;&#xA;checkin.setCola(selectedCola.getId());&#xD;&#xA;checkin.setTotemId(currentTotem.getId());&#xD;&#xA;checkin.setPrioridadId(selectedPrioridad.getId());&#xD;&#xA;checkin.setIdTipoDocumento(102);&#xD;&#xA;checkin.setNroDocumento(&quot;123456&quot;);&#xD;&#xA;checkin.setNombrePaciente(&quot;Walter Bates&quot;);&#xD;&#xA;checkin.setSede(currentTotem.getSede().getId());&#xD;&#xA;&#xD;&#xA;def episodioResponse = new EpisodioResponse();&#xD;&#xA;def oReturn = new Oreturn();&#xD;&#xA;oReturn.setType(&quot;S&quot;)&#xD;&#xA;episodioResponse.setOreturn(oReturn);&#xD;&#xA;checkin.setResponse(episodioResponse);&#xD;&#xA;&#xD;&#xA;return checkin;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.skymed.totem.model.AdmisionPacienteDTO">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_IPtX8NJrEe2ROL99tqEjqA" name="selectedPrioridad" dataType="_eA_0BsziEe22052-PBnc4Q" className="com.skymed.totem.model.Prioridad"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_IPt_ANJrEe2ROL99tqEjqA" name="currentTotem" dataType="_eA_0BsziEe22052-PBnc4Q" className="com.skymed.totem.model.Totem"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_IPt_AdJrEe2ROL99tqEjqA" name="selectedCola" dataType="_eA_0BsziEe22052-PBnc4Q" className="com.skymed.totem.model.ColaAdmision"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_Wc3A8887Ee2qPf4DYzs77w" type="ASSIGNMENT"/>
           </operations>
@@ -149,9 +149,9 @@
               <leftOperand xmi:type="expression:Expression" xmi:id="_1AfRUs5JEe2loO5JO7P1nQ" name="currentTotem" content="currentTotem" type="TYPE_VARIABLE" returnType="com.skymed.totem.model.Totem">
                 <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_1AfRU85JEe2loO5JO7P1nQ" name="currentTotem" dataType="_eA_0BsziEe22052-PBnc4Q" className="com.skymed.totem.model.Totem"/>
               </leftOperand>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_1AfRVM5JEe2loO5JO7P1nQ" name="getCurrentTotem()" content="import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES&#xD;&#xA;&#xD;&#xA;import com.fasterxml.jackson.databind.json.JsonMapper&#xD;&#xA;import com.skymed.totem.model.Totem&#xD;&#xA;&#xD;&#xA;def objectMapper = JsonMapper.builder().configure(FAIL_ON_UNKNOWN_PROPERTIES, false).build();&#xD;&#xA;if (status_code == 200) {&#xD;&#xA;&#x9;return objectMapper.readValue(bodyAsString, Totem.class)&#xD;&#xA;} &#xD;&#xA;return null&#xD;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.skymed.totem.model.Totem">
-                <referencedElements xmi:type="definition:Output" xmi:id="_faVmQM5fEe2loO5JO7P1nQ" name="status_code" type="java.lang.Integer"/>
-                <referencedElements xmi:type="definition:Output" xmi:id="_faVmQc5fEe2loO5JO7P1nQ" name="bodyAsString" type="java.lang.String"/>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_1AfRVM5JEe2loO5JO7P1nQ" name="getCurrentTotem()" content="import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES&#xD;&#xA;&#xD;&#xA;import com.fasterxml.jackson.databind.json.JsonMapper&#xD;&#xA;import com.skymed.totem.model.Totem&#xD;&#xA;&#xD;&#xA;def objectMapper = JsonMapper.builder().configure(FAIL_ON_UNKNOWN_PROPERTIES, false).build();&#xD;&#xA;if (status_code == 200) {&#xD;&#xA;&#x9;return objectMapper.readValue(bodyAsString, Totem.class)&#xD;&#xA;}&#xD;&#xA;return null&#xD;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.skymed.totem.model.Totem">
+                <referencedElements xmi:type="definition:Output" xmi:id="_DTDQsNJrEe2ROL99tqEjqA" name="status_code" type="java.lang.Integer"/>
+                <referencedElements xmi:type="definition:Output" xmi:id="_DTDQsdJrEe2ROL99tqEjqA" name="bodyAsString" type="java.lang.String"/>
               </rightOperand>
               <operator xmi:type="expression:Operator" xmi:id="_1AfRVs5JEe2loO5JO7P1nQ" type="CREATE_BUSINESS_DATA"/>
             </outputs>
@@ -254,8 +254,8 @@
               <referencedElements xmi:type="process:Data" xmi:id="_-FDKoM5gEe2loO5JO7P1nQ" name="isValid" dataType="_eA_z_sziEe22052-PBnc4Q"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_9Vc5ss5gEe2loO5JO7P1nQ" name="isValidTotem()" content="return currentTotem != null &amp;&amp; totemTienePapel;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_xGYF4NJfEe2ROL99tqEjqA" name="currentTotem" dataType="_eA_0BsziEe22052-PBnc4Q" className="com.skymed.totem.model.Totem"/>
-              <referencedElements xmi:type="process:Data" xmi:id="_xGYF4dJfEe2ROL99tqEjqA" name="totemTienePapel" dataType="_eA_z_sziEe22052-PBnc4Q"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_AXNxsNJrEe2ROL99tqEjqA" name="currentTotem" dataType="_eA_0BsziEe22052-PBnc4Q" className="com.skymed.totem.model.Totem"/>
+              <referencedElements xmi:type="process:Data" xmi:id="_AXNxsdJrEe2ROL99tqEjqA" name="totemTienePapel" dataType="_eA_z_sziEe22052-PBnc4Q"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_9Vc5s85gEe2loO5JO7P1nQ" type="ASSIGNMENT"/>
           </operations>
@@ -482,7 +482,7 @@
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_QL51ds1oEe2_GaC9xHNsqQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_QL51eM1oEe2_GaC9xHNsqQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_QL51d81oEe2_GaC9xHNsqQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-          <formMapping xmi:type="process:FormMapping" xmi:id="_SDIc2s1oEe2_GaC9xHNsqQ" type="URL">
+          <formMapping xmi:type="process:FormMapping" xmi:id="_SDIc2s1oEe2_GaC9xHNsqQ">
             <targetForm xmi:type="expression:Expression" xmi:id="_Mxse8M2VEe2r5bmlX6-2kg" name="seleccionarPrioridad" content="3d543c28-ece8-4e88-b559-70adff14f9e4" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_SDIc2c1oEe2_GaC9xHNsqQ">
