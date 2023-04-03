@@ -1,8 +1,8 @@
 {
   "modelVersion" : "2.3",
-  "id" : "seleccionarCola",
-  "name" : "seleccionarCola",
-  "lastUpdate" : 1680190306870,
+  "id" : "resumen",
+  "name" : "resumen",
+  "lastUpdate" : 1680538303776,
   "rows" : [
     [
       {
@@ -10,8 +10,20 @@
         "dimension" : {
           "xs" : 12
         },
-        "propertyValues" : { },
-        "reference" : "6bc0d433-db7b-4a61-af35-84d3276dddde",
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "repeatedCollection" : {
+            "type" : "variable"
+          }
+        },
+        "reference" : "4cfdfb58-1d55-4692-ba23-b865541c4250",
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
@@ -54,7 +66,7 @@
                   "value" : false
                 }
               },
-              "reference" : "0b8a9b99-1636-4e06-97bb-231b9533e721",
+              "reference" : "262d8cfa-8b41-41ea-98a5-059ed618f804",
               "hasValidationError" : false,
               "id" : "pbTitle",
               "description" : ""
@@ -91,7 +103,7 @@
                 },
                 "text" : {
                   "type" : "interpolation",
-                  "value" : "{{ task.displayDescription }}"
+                  "value" : "Nro. Ticket: {{ checkin.nroTicket }}"
                 },
                 "alignment" : {
                   "type" : "constant",
@@ -100,9 +112,21 @@
                 "dimension" : {
                   "type" : "constant",
                   "value" : 12
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
                 }
               },
-              "reference" : "acbba43f-b05f-4002-9c95-942fe3571b85",
+              "reference" : "3ecbc31a-4bda-4189-a6b9-2c3b5b7efdb0",
               "hasValidationError" : false,
               "id" : "pbText",
               "description" : ""
@@ -118,7 +142,7 @@
           "xs" : 12
         },
         "propertyValues" : { },
-        "reference" : "790b16ae-ca9d-4403-b022-5879e627b780",
+        "reference" : "1ecc083f-35e5-4137-9d52-86c47a74c152",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
         "container" : {
@@ -127,160 +151,10 @@
             "xs" : 12
           },
           "propertyValues" : { },
-          "reference" : "d51b4a19-feef-4047-b9a3-883ffdf77517",
+          "reference" : "0bebfef6-7858-41ba-ac1b-b2e20598c68f",
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
-            [
-              {
-                "type" : "component",
-                "dimension" : {
-                  "md" : 12,
-                  "sm" : 12,
-                  "xs" : 12,
-                  "lg" : 12
-                },
-                "propertyValues" : {
-                  "hidden" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "level" : {
-                    "type" : "constant",
-                    "value" : "Level 4"
-                  },
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : ""
-                  },
-                  "text" : {
-                    "type" : "interpolation",
-                    "value" : "Selected Cola"
-                  },
-                  "alignment" : {
-                    "type" : "constant",
-                    "value" : "left"
-                  },
-                  "dimension" : {
-                    "type" : "constant",
-                    "value" : 12
-                  },
-                  "allowHTML" : {
-                    "type" : "constant",
-                    "value" : false
-                  }
-                },
-                "reference" : "bd5dc7f0-e810-4f04-96f1-a5ebc95b57ff",
-                "hasValidationError" : false,
-                "id" : "pbTitle",
-                "description" : ""
-              }
-            ],
-            [
-              {
-                "type" : "container",
-                "dimension" : {
-                  "md" : 12,
-                  "sm" : 12,
-                  "xs" : 12,
-                  "lg" : 12
-                },
-                "propertyValues" : {
-                  "repeatedCollection" : {
-                    "type" : "variable"
-                  },
-                  "hidden" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : ""
-                  },
-                  "dimension" : {
-                    "type" : "constant",
-                    "value" : 12
-                  }
-                },
-                "reference" : "6d95218d-cb76-4f95-9927-57c1be282d18",
-                "hasValidationError" : false,
-                "id" : "pbContainer",
-                "rows" : [
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "disabled" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "required" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "allowHTML" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Id"
-                        },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
-                        "placeholder" : {
-                          "type" : "interpolation",
-                          "value" : "Seleccione la cola de atencion"
-                        },
-                        "availableValues" : {
-                          "type" : "expression",
-                          "value" : "colasHabilitadas"
-                        },
-                        "displayedKey" : {
-                          "type" : "constant",
-                          "value" : "traduccion"
-                        },
-                        "returnedKey" : {
-                          "type" : "constant",
-                          "value" : "id"
-                        },
-                        "value" : {
-                          "type" : "variable",
-                          "value" : "selectedCola.id"
-                        }
-                      },
-                      "reference" : "69f61a49-fe35-49a3-808e-995dd3aa5a6a",
-                      "hasValidationError" : false,
-                      "id" : "pbSelect"
-                    }
-                  ]
-                ]
-              }
-            ],
             [
               {
                 "type" : "component",
@@ -356,7 +230,7 @@
                     "value" : 12
                   }
                 },
-                "reference" : "91f44743-f596-45f7-844f-e0fcf992c5a8",
+                "reference" : "d2c6b7a0-2132-478d-94d3-2e2e5908a8e2",
                 "hasValidationError" : false,
                 "id" : "pbButton",
                 "description" : ""
@@ -416,7 +290,7 @@
                     "value" : 4
                   }
                 },
-                "reference" : "006b4c84-8ab7-4e85-8665-bb8fd068634e",
+                "reference" : "aaf788b5-7874-4884-8226-86f3444f1c6f",
                 "hasValidationError" : false,
                 "id" : "pbText",
                 "description" : ""
@@ -429,16 +303,16 @@
   ],
   "assets" : [
     {
-      "id" : "b30cb910-223e-4537-a86c-37025aceb38e",
-      "name" : "localization.json",
-      "type" : "json",
+      "id" : "5be65895-58ce-424b-8051-1b0f78785999",
+      "name" : "style.css",
+      "type" : "css",
       "order" : 0,
       "external" : false
     },
     {
-      "id" : "a1978164-ea4a-47f2-99df-a939930912cf",
-      "name" : "style.css",
-      "type" : "css",
+      "id" : "a95536aa-ea6d-4641-8c63-b7fa56d8455a",
+      "name" : "localization.json",
+      "type" : "json",
       "order" : 0,
       "external" : false
     }
@@ -470,15 +344,8 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "if( $data.selectedCola ){",
-        "\t//attach lazy references variables to parent variables",
-        "\t$data.selectedCola.colaHorario = $data.selectedCola_colaHorario;",
-        "\treturn {",
-        "\t\t//map selectedCola variable to expected task contract input",
-        "\t\tselectedColaInput: {",
-        "\t\t\tid: $data.selectedCola.id !== undefined ? $data.selectedCola.id : null",
-        "\t\t}",
-        "\t}",
+        "return {",
+        "",
         "}"
       ],
       "exposed" : false
@@ -490,13 +357,6 @@
       ],
       "exposed" : false
     },
-    "selectedCola" : {
-      "type" : "url",
-      "value" : [
-        "../{{context.selectedCola_ref.link}}"
-      ],
-      "exposed" : false
-    },
     "taskId" : {
       "type" : "urlparameter",
       "value" : [
@@ -504,30 +364,16 @@
       ],
       "exposed" : false
     },
-    "colasDisponibles" : {
+    "checkin" : {
       "type" : "url",
       "value" : [
-        "https://testcrm-rest.skytel.com.ar:8443/admision/resources/totem-app/find-colas-by-totem/{{currentTotem.id}}"
-      ],
-      "exposed" : false
-    },
-    "currentTotem" : {
-      "type" : "url",
-      "value" : [
-        "../{{context.currentTotem_ref.link}}"
-      ],
-      "exposed" : false
-    },
-    "colasHabilitadas" : {
-      "type" : "expression",
-      "value" : [
-        "return $data.colasDisponibles.filter(cola => cola.habilitado);"
+        "../{{context.ticket_ref.link}}"
       ],
       "exposed" : false
     }
   },
   "hasValidationError" : false,
-  "uuid" : "e85167c7-d5f0-472f-90ca-8ee207f4f858",
+  "uuid" : "f2a5602e-ced1-44af-b2af-7366308c4210",
   "type" : "form",
   "description" : "Page generated with Bonita UI designer"
 }

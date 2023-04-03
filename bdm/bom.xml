@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0" productVersion="7.15.0">
     <businessObjects>
+        <businessObject qualifiedName="com.skymed.totem.model.AdmisionPacienteDTO">
+            <fields>
+                <field type="LONG" length="255" name="cola" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="sede" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="prioridadId" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="idTipoDocumento" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nroDocumento" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nombrePaciente" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="idCitaSap" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="codigoSeguridad" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="precheckin" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="episodioSap" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="codigoExternoSalaSap" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="totemId" nullable="true" collection="false"/>
+                <relationField type="COMPOSITION" reference="com.skymed.totem.model.EpisodioResponse" fetchType="EAGER" name="response" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="com.skymed.totem.model.Barrio">
             <fields>
                 <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
@@ -8,6 +28,20 @@
                 <field type="LONG" length="255" name="ciudadId" nullable="true" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.skymed.totem.model.Ciudad" fetchType="LAZY" name="ciudad" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="className" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.Checkin">
+            <fields>
+                <field type="LONG" length="255" name="id" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.CheckinGroup" fetchType="LAZY" name="checkinGroup" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nroTicket" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.ColaAdmision" fetchType="LAZY" name="cola" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Prioridad" fetchType="LAZY" name="prioridad" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="attribute" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="fechaImpresion" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
@@ -125,6 +159,14 @@
             <queries/>
             <indexes/>
         </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.EpisodioResponse">
+            <fields>
+                <relationField type="AGGREGATION" reference="com.skymed.totem.model.Oreturn" fetchType="EAGER" name="oreturn" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="com.skymed.totem.model.Hospital">
             <fields>
                 <field type="LONG" length="255" name="id" nullable="false" collection="false"/>
@@ -144,6 +186,14 @@
                 <field type="LONG" length="255" name="empresaId" nullable="true" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.skymed.totem.model.Empresa" fetchType="LAZY" name="empresa" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="className" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.skymed.totem.model.Oreturn">
+            <fields>
+                <field type="STRING" length="255" name="type" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>

@@ -5,7 +5,7 @@
   <groupId>com.skymed.totem</groupId>
   <artifactId>totem</artifactId>
   <version>1.0.0</version>
-  <name>totem</name>
+  <name>totem-bpmn</name>
   <description>Flujo  del Totem Skyhealth</description>
   <properties>
     <bonita.runtime.version>7.15.0</bonita.runtime.version>
